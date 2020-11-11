@@ -45,4 +45,8 @@ export class CursosComponent implements OnInit {
     this.isMouseOver = !this.isMouseOver;
   }
 
+  onMudouValor(evento){
+    console.log(evento);
+  }
+
 }

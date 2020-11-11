@@ -80,5 +80,12 @@
                 <app-input [nomeCurso]="nomeDoCurso"></app-input>
             </div>
         </div>
+
+        <div>
+            <h3>Output Propertie</h3>
+            <div>
+                <contador valor="10" (mudouValor)="onMudouValor($event)"></contador>
+            </div>
+        </div>
     </article>
 </section>
