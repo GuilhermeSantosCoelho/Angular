@@ -9,6 +9,7 @@ import { CursosService } from './cursos.service';
 export class CursosComponent implements OnInit {
 
   cursos: string[];
+  imagemUrl: string = "http://lorempixel.com/400/200/sports";
 
   constructor(private cursosService: CursosService) {
     this.cursos = this.cursosService.getCursos();
