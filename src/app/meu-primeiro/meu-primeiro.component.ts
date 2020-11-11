@@ -2,9 +2,8 @@ import { Component } from '@angular/core';
 
 @Component({
     selector: 'meu-primeiro-component',
-    template: `
-        <p> Meu primeiro component Angular! </p>
-    `,
+    templateUrl: './meu-primeiro.component.html',
+    styleUrls: ['./meu-primeiro.component.scss']
 })
 export class MeuPrimeiroComponent {
 
