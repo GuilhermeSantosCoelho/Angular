@@ -15,6 +15,7 @@ export class CursosComponent implements OnInit {
   valorSalvo: string = '';
   isMouseOver: boolean = false;
   nome: string = 'abc';
+  nomeDoCurso: string = "Angular";
 
   pessoa: any = {
     nome: "abc",
