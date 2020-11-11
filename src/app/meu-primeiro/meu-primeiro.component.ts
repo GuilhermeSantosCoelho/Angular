@@ -7,7 +7,11 @@ import { MeuPrimeiroService } from './meu-primeiro.service';
     styleUrls: ['./meu-primeiro.component.scss']
 })
 export class MeuPrimeiroComponent {
-    constructor(private MeuPrimeiroService: MeuPrimeiroService){
 
+    cursos: string[];
+
+    constructor(private meuPrimeiroService: MeuPrimeiroService){
+        this.cursos = this.meuPrimeiroService.getCursos();
     }
+
 }

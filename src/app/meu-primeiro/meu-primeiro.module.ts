@@ -14,7 +14,7 @@ import { MeuPrimeiroService } from './meu-primeiro.service';
     MeuPrimeiroComponent
   ],
   providers: [
-    MeuPrimeiroService
+    
   ]
 })
 export class MeuPrimeiroModule { }
