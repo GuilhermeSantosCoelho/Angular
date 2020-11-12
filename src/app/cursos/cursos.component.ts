@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { CursosService } from './cursos.service';
-import { FormsModule }   from '@angular/forms';
 
 @Component({
   selector: 'app-cursos',
@@ -9,13 +8,12 @@ import { FormsModule }   from '@angular/forms';
 })
 export class CursosComponent implements OnInit {
 
-  cursos: string[];
+  cursos: string[] = [];
 
-  constructor(private cursosService: CursosService) {
-    this.cursos = this.cursosService.getCursos();
-  }
+  constructor(private cursoService: CursosService) { }
 
   ngOnInit(): void {
+    this.cursos = this.cursoService.getCursos();
   }
 
 }
