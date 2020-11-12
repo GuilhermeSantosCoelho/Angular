@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ServicoComponent } from './servico.component';
+import { ClassStyleBindingComponent } from './class-style-binding.component';
 
-describe('ServicoComponent', () => {
-  let component: ServicoComponent;
-  let fixture: ComponentFixture<ServicoComponent>;
+describe('ClassStyleBindingComponent', () => {
+  let component: ClassStyleBindingComponent;
+  let fixture: ComponentFixture<ClassStyleBindingComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ServicoComponent ]
+      declarations: [ ClassStyleBindingComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ServicoComponent);
+    fixture = TestBed.createComponent(ClassStyleBindingComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

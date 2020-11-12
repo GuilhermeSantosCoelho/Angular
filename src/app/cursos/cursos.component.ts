@@ -10,43 +10,12 @@ import { FormsModule }   from '@angular/forms';
 export class CursosComponent implements OnInit {
 
   cursos: string[];
-  imagemUrl: string = "http://lorempixel.com/400/200/sports";
-  valorAtual: string = '';
-  valorSalvo: string = '';
-  isMouseOver: boolean = false;
-  nome: string = 'abc';
-  nomeDoCurso: string = "Angular";
-
-  pessoa: any = {
-    nome: "abc",
-    idade: 20
-  }
 
   constructor(private cursosService: CursosService) {
     this.cursos = this.cursosService.getCursos();
   }
 
-  botaoClicado(){
-    alert('Botão clicado.');
-  }
-
-  onKeyUp(evento: KeyboardEvent){
-    this.valorAtual = (<HTMLInputElement>evento.target).value;
-  }
-
-  salvarValor(valor){
-    this.valorSalvo = valor;
-  }
-
   ngOnInit(): void {
-  }
-
-  onMouseOverOut(){
-    this.isMouseOver = !this.isMouseOver;
-  }
-
-  onMudouValor(evento){
-    console.log(evento);
   }
 
 }

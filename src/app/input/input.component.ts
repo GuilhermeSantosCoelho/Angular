@@ -7,7 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class InputComponent implements OnInit {
 
-  @Input() nomeCurso: string = '';
+  @Input('nomeCurso') nomeDoCurso: string = '';
 
   constructor() { }
 
