@@ -7,8 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DiretivasComponent implements OnInit {
 
-  cursos: string[] = [];
+  cursos: string[] = ['Angular 2', 'Java', 'PHP'];
   mostrarCurso: boolean = false;
+  aba: string = 'home';
 
   constructor() { }
 
