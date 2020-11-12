@@ -65,3 +65,45 @@
 <ul>
     <li *ngFor="let curso of cursos, let i = index">{{ i + 1}} - {{ curso }}</li>
 </ul>
+
+<h5>Removendo o * e usando template</h5>
+
+<ng-template [ngIf]="mostrarCurso">
+    <div>Lista de cursos aqui.</div>
+</ng-template>
+
+<h3>Diretivas ngClass</h3>
+<h4>Ícone</h4>
+<h1>
+    <i class="glyphicon"
+    [ngClass]="{
+        'glyphicon-star-empty': !meuFavorito,
+        'glyphicon-star': meuFavorito
+    }"
+    (click)="onClick()">
+    </i>
+</h1>
+
+<h3>Diretiva ngStyle</h3>
+
+<button 
+    [style.backgroundColor]="ativo ? 'blue' : 'gray'"
+    [style.color]="ativo ? 'white' : 'black'"
+    [style.fontWeight]="ativo ? 'bold' : 'normal'"
+    [style.fontSize]="tamanhoFonte + 'px'"
+    (click)="mudarAtivo()">
+    Mudar atributo 'ativo'
+</button>
+
+<button 
+    [ngStyle]="{
+        'backgroundColor': (ativo ? 'blue' : 'gray'),
+        'color': (ativo ? 'white' : 'black'),
+        'fontWeight': (ativo ? 'bold' : 'normal'),
+        'fontSize': tamanhoFonte + 'px'
+    }"
+    (click)="mudarAtivo()">
+    Mudar atributo 'ativo'
+</button>
+
+<input type="text" [(ngModel)]="tamanhoFonte">

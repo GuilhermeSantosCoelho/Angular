@@ -6,9 +6,9 @@ import { AppComponent } from './app.component';
 import { MeuPrimeiroComponent } from './meu-primeiro/meu-primeiro.component';
 import { MeuPrimeiroService } from './meu-primeiro/meu-primeiro.service';
 import { CursosModule } from './cursos/cursos.module';
-import { OutputComponent } from './output/output.component';
 import { CiclosComponent } from './ciclos/ciclos.component';
 import { DiretivasComponent } from './diretivas/diretivas.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,7 +20,8 @@ import { DiretivasComponent } from './diretivas/diretivas.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    CursosModule
+    CursosModule,
+    FormsModule
   ],
   providers: [MeuPrimeiroService],
   bootstrap: [AppComponent]
