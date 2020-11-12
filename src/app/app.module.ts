@@ -8,12 +8,14 @@ import { MeuPrimeiroService } from './meu-primeiro/meu-primeiro.service';
 import { CursosModule } from './cursos/cursos.module';
 import { OutputComponent } from './output/output.component';
 import { CiclosComponent } from './ciclos/ciclos.component';
+import { DiretivasComponent } from './diretivas/diretivas.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MeuPrimeiroComponent,
-    CiclosComponent
+    CiclosComponent,
+    DiretivasComponent
   ],
   imports: [
     BrowserModule,

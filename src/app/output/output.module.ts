@@ -8,7 +8,7 @@ import { OutputComponent } from './output.component';
   declarations: [OutputComponent],
   imports: [
     CommonModule
-  ], 
+  ],
   exports: [
     OutputComponent
   ]
