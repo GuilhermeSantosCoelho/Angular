@@ -9,13 +9,15 @@ import { CursosModule } from './cursos/cursos.module';
 import { CiclosComponent } from './ciclos/ciclos.component';
 import { DiretivasComponent } from './diretivas/diretivas.component';
 import { FormsModule } from '@angular/forms';
+import { OperadorElvisComponent } from './operador-elvis/operador-elvis.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MeuPrimeiroComponent,
     CiclosComponent,
-    DiretivasComponent
+    DiretivasComponent,
+    OperadorElvisComponent
   ],
   imports: [
     BrowserModule,
