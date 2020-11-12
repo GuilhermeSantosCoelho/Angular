@@ -11,6 +11,8 @@ import { DiretivasComponent } from './diretivas/diretivas.component';
 import { FormsModule } from '@angular/forms';
 import { OperadorElvisComponent } from './operador-elvis/operador-elvis.component';
 import { NgContentComponent } from './ng-content/ng-content.component';
+import { FundoAmareloDirective } from './shared/fundo-amarelo.directive';
+import { DiretivasCustomizadasComponent } from './diretivas-customizadas/diretivas-customizadas.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { NgContentComponent } from './ng-content/ng-content.component';
     CiclosComponent,
     DiretivasComponent,
     OperadorElvisComponent,
-    NgContentComponent
+    NgContentComponent,
+    FundoAmareloDirective,
+    DiretivasCustomizadasComponent
   ],
   imports: [
     BrowserModule,
