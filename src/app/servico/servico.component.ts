@@ -12,8 +12,9 @@ export class ServicoComponent implements OnInit {
   cursos: string[];
   servicoService: ServicoService;
 
-  constructor() { 
-    this.servicoService = new ServicoService();
+  constructor(servicoService: ServicoService) { 
+    //this.servicoService = new ServicoService();
+    this.servicoService = servicoService;
   }
 
   ngOnInit(): void {

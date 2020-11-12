@@ -17,6 +17,7 @@ import { HighlightMouseDirective } from './shared/highlight-mouse.directive';
 import { HighlightDirective } from './shared/highlight.directive';
 import { NgElseDirective } from './shared/ng-else.directive';
 import { ServicoComponent } from './servico/servico.component';
+import { ServicoService } from './servico/servico.service';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,10 @@ import { ServicoComponent } from './servico/servico.component';
     CursosModule,
     FormsModule
   ],
-  providers: [MeuPrimeiroService],
+  providers: [
+    MeuPrimeiroService, 
+    ServicoService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
