@@ -10,6 +10,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatListModule } from '@angular/material/list';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { CursosRoutingModule } from './cursos.routing.module';
 
 @NgModule({
     declarations: [
@@ -24,7 +25,8 @@ import { MatIconModule } from '@angular/material/icon';
         MatFormFieldModule,
         MatListModule,
         MatButtonModule,
-        MatIconModule
+        MatIconModule,
+        CursosRoutingModule
     ],
     exports: [],
     providers: [CursosService],
