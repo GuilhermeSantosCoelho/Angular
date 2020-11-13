@@ -23,10 +23,11 @@ import { TwoWayComponent } from './two-way/two-way.component';
 import { CriarCursoModule } from './criar-curso/criar-curso.module';
 import { LogService } from './shared/log.service';
 import { ExemplosPipesComponent } from './exemplos-pipes/exemplos-pipes.component';
-import { CamelCasePipe } from './camel-case.pipe';
+import { CamelCasePipe } from './pipes/camel-case.pipe';
 import br from '@angular/common/locales/pt';
 import {registerLocaleData} from '@angular/common';
 import { SettingsService } from './settings/settings.service';
+import { FiltroArrayPipe } from './pipes/filtro-array.pipe';
 
 registerLocaleData(br, 'pt-BR');
 
@@ -49,6 +50,7 @@ registerLocaleData(br, 'pt-BR');
     TwoWayComponent,
     ExemplosPipesComponent,
     CamelCasePipe,
+    FiltroArrayPipe,
   ],
   imports: [
     BrowserModule,
