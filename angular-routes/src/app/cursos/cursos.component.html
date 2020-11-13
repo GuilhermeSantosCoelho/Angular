@@ -1,1 +1,5 @@
-<p>cursos works!</p>
+<mat-action-list>
+    <button mat-list-item *ngFor="let curso of cursos" [routerLink]="['/curso', curso.id]">
+        {{ curso.nome }}
+    </button>
+</mat-action-list>
