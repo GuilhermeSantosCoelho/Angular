@@ -18,7 +18,7 @@ export class ExemplosPipesComponent implements OnInit {
 
   livros: string[] = ['Angular', 'Java'];
 
-  filtro: string;
+  filtro: string = '';
 
   constructor() { }
 
@@ -27,6 +27,19 @@ export class ExemplosPipesComponent implements OnInit {
 
   addCurso(valor){
     this.livros.push(valor)
+  }
+
+  obterCursos(){
+    if(this.livros.length === 0 || this.filtro === null || this.filtro.trim() === ''){
+      return this.livros;
+    }
+
+    return this.livros.filter((v) => {
+      if(v.toLowerCase().indexOf(this.filtro.toLowerCase()) >= 0){
+        return true;
+      }
+      return false;
+    })
   }
 
 }

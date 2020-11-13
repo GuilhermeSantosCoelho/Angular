@@ -28,6 +28,7 @@ import br from '@angular/common/locales/pt';
 import {registerLocaleData} from '@angular/common';
 import { SettingsService } from './settings/settings.service';
 import { FiltroArrayPipe } from './pipes/filtro-array.pipe';
+import { FiltroArrayImpuroPipe } from './pipes/filtro-array-impuro.pipe';
 
 registerLocaleData(br, 'pt-BR');
 
@@ -51,6 +52,7 @@ registerLocaleData(br, 'pt-BR');
     ExemplosPipesComponent,
     CamelCasePipe,
     FiltroArrayPipe,
+    FiltroArrayImpuroPipe,
   ],
   imports: [
     BrowserModule,
