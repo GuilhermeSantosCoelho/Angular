@@ -16,12 +16,12 @@ import { DiretivasCustomizadasComponent } from './diretivas-customizadas/diretiv
 import { HighlightMouseDirective } from './shared/highlight-mouse.directive';
 import { HighlightDirective } from './shared/highlight.directive';
 import { NgElseDirective } from './shared/ng-else.directive';
-import { CriarCursoComponent } from './criar-curso/criar-curso.component';
 import { PropertyBindingComponent } from './property-binding/property-binding.component';
 import { ClassStyleBindingComponent } from './class-style-binding/class-style-binding.component';
 import { EventBindingComponent } from './event-binding/event-binding.component';
 import { TwoWayComponent } from './two-way/two-way.component';
 import { CursosService } from './cursos/cursos.service';
+import { CriarCursoModule } from './criar-curso/criar-curso.module';
 
 @NgModule({
   declarations: [
@@ -36,21 +36,20 @@ import { CursosService } from './cursos/cursos.service';
     HighlightMouseDirective,
     HighlightDirective,
     NgElseDirective,
-    CriarCursoComponent,
     PropertyBindingComponent,
     ClassStyleBindingComponent,
     EventBindingComponent,
-    TwoWayComponent
+    TwoWayComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     CursosModule,
-    FormsModule
+    FormsModule,
+    CriarCursoModule
   ],
   providers: [
-    MeuPrimeiroService,
-    CursosService
+    MeuPrimeiroService
   ],
   bootstrap: [AppComponent]
 })
