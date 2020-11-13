@@ -20,8 +20,8 @@ import { PropertyBindingComponent } from './property-binding/property-binding.co
 import { ClassStyleBindingComponent } from './class-style-binding/class-style-binding.component';
 import { EventBindingComponent } from './event-binding/event-binding.component';
 import { TwoWayComponent } from './two-way/two-way.component';
-import { CursosService } from './cursos/cursos.service';
 import { CriarCursoModule } from './criar-curso/criar-curso.module';
+import { LogService } from './shared/log.service';
 
 @NgModule({
   declarations: [
@@ -49,7 +49,8 @@ import { CriarCursoModule } from './criar-curso/criar-curso.module';
     CriarCursoModule
   ],
   providers: [
-    MeuPrimeiroService
+    MeuPrimeiroService,
+    LogService
   ],
   bootstrap: [AppComponent]
 })
