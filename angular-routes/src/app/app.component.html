@@ -2,15 +2,19 @@
   <mat-toolbar color="primary">
     <mat-toolbar-row>
       <span><a mat-button routerLink="">Home</a></span>
-      <span><a mat-button routerLink="login">Login</a></span>
-      <span><a mat-button routerLink="cursos">Cursos</a></span>
+      <span routerLinkActive="active"><a mat-button routerLink="login">Login</a></span>
+      <span routerLinkActive="active"><a mat-button routerLink="cursos">Cursos</a></span>
+      <span routerLinkActive="active"><a mat-button [routerLink]="['curso', idCurso.value]">Curso com id</a></span>
       <span class="example-spacer"></span>
-      <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-        <mat-icon>menu</mat-icon>
-      </button>
     </mat-toolbar-row>
   </mat-toolbar>
 </p>
 <div class="container">
+
+  <mat-form-field class="example-full-width">
+    <mat-label>ID DO CURSO</mat-label>
+    <input matInput type="text" #idCurso>
+  </mat-form-field>
+
   <router-outlet></router-outlet>
 </div>
