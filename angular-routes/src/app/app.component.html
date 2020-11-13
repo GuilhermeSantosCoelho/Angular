@@ -1,1 +1,16 @@
-<router-outlet></router-outlet>
+<p>
+  <mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <span><a mat-button routerLink="">Home</a></span>
+      <span><a mat-button routerLink="login">Login</a></span>
+      <span><a mat-button routerLink="cursos">Cursos</a></span>
+      <span class="example-spacer"></span>
+      <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+        <mat-icon>menu</mat-icon>
+      </button>
+    </mat-toolbar-row>
+  </mat-toolbar>
+</p>
+<div class="container">
+  <router-outlet></router-outlet>
+</div>
