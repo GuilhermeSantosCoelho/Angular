@@ -22,6 +22,7 @@ import { EventBindingComponent } from './event-binding/event-binding.component';
 import { TwoWayComponent } from './two-way/two-way.component';
 import { CriarCursoModule } from './criar-curso/criar-curso.module';
 import { LogService } from './shared/log.service';
+import { ExemplosPipesComponent } from './exemplos-pipes/exemplos-pipes.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { LogService } from './shared/log.service';
     ClassStyleBindingComponent,
     EventBindingComponent,
     TwoWayComponent,
+    ExemplosPipesComponent,
   ],
   imports: [
     BrowserModule,

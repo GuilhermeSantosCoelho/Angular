@@ -1,0 +1,12 @@
+<p>Exemplos de Pipes</p>
+
+<p>Título: {{ livro.titulo | uppercase | lowercase }}</p>
+<p>Avaliação: {{ livro.avaliacao | number:'1.1-1' }}</p>
+<p>Dimensões: {{ livro.dimensoes }}</p>
+<p>Ranking: {{ livro.ranking }}</p>
+<p>Preço: {{ livro.preco | currency:'BRL' }}</p>
+<p>Data de lançamento: {{ livro.dataLancamento | date:'dd-MM-yyyy' }}</p>
+
+<br>
+
+<p>Livro: {{ livro | json }}</p>
