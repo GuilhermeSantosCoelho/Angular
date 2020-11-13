@@ -11,6 +11,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { CursosModule } from './cursos/cursos.module';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { AlunosModule } from './alunos/alunos.module';
+import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     MatButtonModule,
     AppRoutingModule,
     CursosModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    AlunosModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]
