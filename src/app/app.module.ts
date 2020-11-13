@@ -23,6 +23,7 @@ import { TwoWayComponent } from './two-way/two-way.component';
 import { CriarCursoModule } from './criar-curso/criar-curso.module';
 import { LogService } from './shared/log.service';
 import { ExemplosPipesComponent } from './exemplos-pipes/exemplos-pipes.component';
+import { CamelCasePipe } from './camel-case.pipe';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { ExemplosPipesComponent } from './exemplos-pipes/exemplos-pipes.componen
     EventBindingComponent,
     TwoWayComponent,
     ExemplosPipesComponent,
+    CamelCasePipe,
   ],
   imports: [
     BrowserModule,
