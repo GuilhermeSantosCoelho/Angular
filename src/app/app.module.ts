@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -24,6 +24,11 @@ import { CriarCursoModule } from './criar-curso/criar-curso.module';
 import { LogService } from './shared/log.service';
 import { ExemplosPipesComponent } from './exemplos-pipes/exemplos-pipes.component';
 import { CamelCasePipe } from './camel-case.pipe';
+import br from '@angular/common/locales/pt';
+import {registerLocaleData} from '@angular/common';
+import { SettingsService } from './settings/settings.service';
+
+registerLocaleData(br, 'pt-BR');
 
 @NgModule({
   declarations: [
@@ -54,7 +59,8 @@ import { CamelCasePipe } from './camel-case.pipe';
   ],
   providers: [
     MeuPrimeiroService,
-    LogService
+    LogService,
+    SettingsService
   ],
   bootstrap: [AppComponent]
 })
