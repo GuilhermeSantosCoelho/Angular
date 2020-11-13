@@ -1,5 +1,13 @@
+<p>Página: {{ pagina }}</p>
 <mat-action-list>
     <button mat-list-item *ngFor="let curso of cursos" [routerLink]="['/curso', curso.id]">
         {{ curso.nome }}
     </button>
 </mat-action-list>
+
+<button mat-mini-fab color="warn" (click)="paginaAnterior()">
+    <mat-icon>remove_circle</mat-icon>
+</button>
+<button mat-mini-fab color="warn" (click)="proximaPagina()">
+    <mat-icon>add_circle</mat-icon>
+</button>
