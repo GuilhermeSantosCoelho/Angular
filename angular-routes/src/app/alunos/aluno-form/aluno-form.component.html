@@ -7,12 +7,12 @@
 <br>
 <mat-form-field appearance="fill">
     <mat-label>Nome</mat-label>
-    <input [(ngModel)]="aluno.nome" matInput>
+    <input [(ngModel)]="aluno.nome" matInput (input)="onInput()">
 </mat-form-field>
 <br>
 <mat-form-field appearance="fill">
     <mat-label>Email</mat-label>
-    <input [(ngModel)]="aluno.email" placeholder="email@email.com" matInput>
+    <input [(ngModel)]="aluno.email" placeholder="email@email.com" matInput (input)="onInput()">
     <mat-icon matSuffix>email</mat-icon>
 </mat-form-field>
 <br>

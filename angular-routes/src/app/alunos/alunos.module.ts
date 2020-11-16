@@ -12,6 +12,7 @@ import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
+import { AlunosDeactivateGuard } from '../guards/alunos-deactivate.guard';
 
 @NgModule({
     declarations: [
@@ -31,6 +32,9 @@ import { MatButtonModule } from '@angular/material/button';
         MatButtonModule
     ],
     exports: [],
-    providers: [AlunosService],
+    providers: [
+        AlunosService,
+        AlunosDeactivateGuard
+    ],
 })
 export class AlunosModule {}
