@@ -12,7 +12,8 @@ import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
-import { AlunosDeactivateGuard } from '../guards/alunos-deactivate.guard';
+import { AlunosDeactivateGuard } from './guards/alunos-deactivate.guard';
+import { AlunoDetalheResolver } from './guards/aluno-detalhe.resolver';
 
 @NgModule({
     declarations: [
@@ -34,7 +35,8 @@ import { AlunosDeactivateGuard } from '../guards/alunos-deactivate.guard';
     exports: [],
     providers: [
         AlunosService,
-        AlunosDeactivateGuard
+        AlunosDeactivateGuard,
+        AlunoDetalheResolver
     ],
 })
 export class AlunosModule {}

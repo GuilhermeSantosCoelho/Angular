@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { IformCandeactivate } from 'src/app/guards/iform-candeactivate';
+import { IformCandeactivate } from 'src/app/alunos/guards/iform-candeactivate';
 import { AlunosService } from '../alunos.service';
 
 @Component({

@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { CanDeactivate, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree } from '@angular/router';
 import { Observable } from 'rxjs';
-import { AlunoFormComponent } from '../alunos/aluno-form/aluno-form.component';
 import { IformCandeactivate } from './iform-candeactivate';
 
 @Injectable()
