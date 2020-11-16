@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { IformCandeactivate } from 'src/app/guards/iform-candeactivate';
 import { AlunosService } from '../alunos.service';
 
 @Component({
@@ -8,7 +9,7 @@ import { AlunosService } from '../alunos.service';
   templateUrl: './aluno-form.component.html',
   styleUrls: ['./aluno-form.component.scss']
 })
-export class AlunoFormComponent implements OnInit {
+export class AlunoFormComponent implements OnInit, IformCandeactivate {
 
   inscricao: Subscription;
   aluno: any;
@@ -31,6 +32,10 @@ export class AlunoFormComponent implements OnInit {
         }
       }
     );
+  }
+
+  podeDesativar(){
+    this.podeMudarRota();
   }
 
   onInput(){
