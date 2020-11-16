@@ -4,7 +4,7 @@
       <span><a mat-button routerLink="">Home</a></span>
       <span routerLinkActive="active"><a mat-button routerLink="login">Login</a></span>
       <span routerLinkActive="active"><a mat-button routerLink="cursos" [queryParams]="{pagina:1}">Cursos</a></span>
-      <span routerLinkActive="active"><a mat-button [routerLink]="['curso', idCurso.value]">Curso com id</a></span>
+      <!-- <span routerLinkActive="active"><a mat-button [routerLink]="['curso', idCurso.value]">Curso com id</a></span> -->
       <span routerLinkActive="active"><a mat-button routerLink="alunos">Alunos</a></span>
       <span class="example-spacer"></span>
     </mat-toolbar-row>
@@ -12,10 +12,10 @@
 </p>
 <div class="container">
 
-  <mat-form-field class="example-full-width">
+  <!-- <mat-form-field class="example-full-width">
     <mat-label>ID DO CURSO</mat-label>
     <input matInput type="text" #idCurso>
-  </mat-form-field>
+  </mat-form-field> -->
 
   <router-outlet></router-outlet>
 </div>
