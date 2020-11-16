@@ -1,6 +1,6 @@
 <p>Página: {{ pagina }}</p>
 <mat-action-list>
-    <button mat-list-item *ngFor="let curso of cursos" [routerLink]="['/curso', curso.id]">
+    <button mat-list-item *ngFor="let curso of cursos" [routerLink]="['/cursos', curso.id]">
         {{ curso.nome }}
     </button>
 </mat-action-list>

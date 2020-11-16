@@ -9,9 +9,7 @@ import { LoginComponent } from './login/login.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
-import { CursosModule } from './cursos/cursos.module';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { AlunosModule } from './alunos/alunos.module';
 import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
@@ -27,9 +25,7 @@ import { MatInputModule } from '@angular/material/input';
     MatIconModule,
     MatButtonModule,
     AppRoutingModule,
-    CursosModule,
     MatFormFieldModule,
-    AlunosModule,
     MatInputModule
   ],
   providers: [],
