@@ -1,16 +1,19 @@
-<form #form="ngForm" class="form" (ngSubmit)="onSubmit(form)">
+<form #form=ngForm class="form" (ngSubmit)="onSubmit(form)">
   <h3>Template form</h3>
-  <mat-form-field appearance="fill">
-    <mat-label>Nome</mat-label>
-    <input matInput name="nome" [(ngModel)]="usuario.nome">
-  </mat-form-field>
-  <br>
 
-  <mat-form-field appearance="fill">
-    <mat-label>Email</mat-label>
-    <input matInput placeholder="email@email.com" name="email" [(ngModel)]="usuario.email">
-  </mat-form-field>
-  <br>
+  <p>
+    <mat-form-field appearance="outline">
+      <mat-label>Nome</mat-label>
+      <input matInput name="nome" [(ngModel)]="usuario.nome">
+    </mat-form-field>
+    <br>
+  </p>
+  <p>
+    <mat-form-field appearance="outline">
+      <mat-label>Email</mat-label>
+      <input matInput placeholder="email@email.com" name="email" [(ngModel)]="usuario.email">
+    </mat-form-field>
+  </p>
 
   <button mat-raised-button color="primary">Submit</button>
 </form>
