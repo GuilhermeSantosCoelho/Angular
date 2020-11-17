@@ -12,3 +12,7 @@ mat-form-field{
 button{
     width: 100%;
 }
+
+.ng-invalid.ng-touched.mat-form-field-outline:not(form){
+    border: 1px solid red;
+}
