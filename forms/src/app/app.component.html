@@ -1,0 +1,19 @@
+<p>
+  <mat-toolbar color="primary">
+    <button mat-icon-button>
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span>My App</span>
+    <span class="example-spacer"></span>
+    <a mat-button routerLink="/templateForm">
+      Form - Template Driven
+    </a>
+    <a mat-button routerLink="/dataForm">
+      Form - Data Driven
+    </a>
+  </mat-toolbar>
+</p>
+
+<div class="container">
+  <router-outlet></router-outlet>
+</div>
