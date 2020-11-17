@@ -3,11 +3,10 @@
 
   <mat-form-field appearance="outline">
     <mat-label>Nome</mat-label>
-    <input matInput name="nome" [(ngModel)]="usuario.nome" required #nome>
+    <input matInput name="nome" [(ngModel)]="usuario.nome" required #nome="ngModel">
+    <mat-hint *ngIf="!nome.valid && name.touched" style="color: red;">Nome é obrigatório</mat-hint>
   </mat-form-field>
-  <div>
-    {{ nome.className }}
-  </div>
+
   <mat-form-field appearance="outline">
     <mat-label>Email</mat-label>
     <input matInput placeholder="email@email.com" name="email" [(ngModel)]="usuario.email" required email>
