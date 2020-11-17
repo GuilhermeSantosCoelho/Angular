@@ -1,15 +1,16 @@
 <p>template-form works!</p>
-
-<mat-form-field appearance="fill">
+<form #form="ngForm" (ngSubmit)="onSubmit(form)">
+  <mat-form-field appearance="fill">
     <mat-label>Nome</mat-label>
-    <input matInput>
-</mat-form-field>
-<br>
+    <input matInput name="nome" ngModel>
+  </mat-form-field>
+  <br>
 
-<mat-form-field appearance="fill">
+  <mat-form-field appearance="fill">
     <mat-label>Email</mat-label>
-    <input matInput placeholder="email@email.com">
-</mat-form-field>
-<br>
+    <input matInput placeholder="email@email.com" name="email" ngModel>
+  </mat-form-field>
+  <br>
 
-<button mat-raised-button color="primary">Submit</button>
+  <button mat-raised-button color="primary">Submit</button>
+</form>
