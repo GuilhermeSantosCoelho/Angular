@@ -6,10 +6,12 @@ import { TemplateFormComponent } from './template-form.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
+import { FormDebugComponent } from '../form-debug/form-debug.component';
 
 @NgModule({
   declarations: [
-    TemplateFormComponent
+    TemplateFormComponent,
+    FormDebugComponent
   ],
   imports: [
     CommonModule,
