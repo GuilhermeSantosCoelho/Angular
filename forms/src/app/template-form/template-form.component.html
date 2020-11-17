@@ -4,13 +4,15 @@
   <mat-form-field appearance="outline">
     <mat-label>Nome</mat-label>
     <input matInput name="nome" [(ngModel)]="usuario.nome" required #nome="ngModel">
-    <mat-hint *ngIf="!nome.valid && name.touched" style="color: red;">Nome é obrigatório</mat-hint>
+    <mat-hint *ngIf="!nome.valid && nome.touched" style="color: red;">Nome é obrigatório</mat-hint>
   </mat-form-field>
 
   <mat-form-field appearance="outline">
     <mat-label>Email</mat-label>
-    <input matInput placeholder="email@email.com" name="email" [(ngModel)]="usuario.email" required email>
+    <input matInput placeholder="email@email.com" name="email" 
+      [(ngModel)]="usuario.email" required email #email="ngModel">
+    <mat-hint *ngIf="!email.valid && email.touched" style="color: red;">Email inválido.</mat-hint>
   </mat-form-field>
 
-  <button mat-raised-button color="primary">Submit</button>
+  <button mat-raised-button [disabled]="!form.valid" color="primary">Submit</button>
 </form>
