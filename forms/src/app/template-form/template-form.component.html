@@ -1,18 +1,64 @@
 <form #form=ngForm class="form" (ngSubmit)="onSubmit(form)">
   <h3>Template form</h3>
+  <div fxLayout="column" fxLayoutAlign="center stretch" >
+    <mat-form-field appearance="outline" fxFlex="100">
+      <mat-label>Nome</mat-label>
+      <input matInput name="nome" [(ngModel)]="usuario.nome" required #nome="ngModel">
+      <mat-hint *ngIf="!nome.valid && nome.touched" style="color: red;">Nome é obrigatório</mat-hint>
+    </mat-form-field>
 
-  <mat-form-field appearance="outline">
-    <mat-label>Nome</mat-label>
-    <input matInput name="nome" [(ngModel)]="usuario.nome" required #nome="ngModel">
-    <mat-hint *ngIf="!nome.valid && nome.touched" style="color: red;">Nome é obrigatório</mat-hint>
+    <mat-form-field appearance="outline" fxFlex="100">
+      <mat-label>Email</mat-label>
+      <input matInput placeholder="email@email.com" name="email" [(ngModel)]="usuario.email" required email
+        #email="ngModel">
+      <mat-hint *ngIf="!email.valid && email.touched" style="color: red;">Email inválido.</mat-hint>
+    </mat-form-field>
+  </div>
+
+  <div fxLayout="row" fxLayoutAlign="space-between start">
+    <mat-form-field appearance="outline" fxLayoutGap fxFlex="25">
+      <mat-label>CEP</mat-label>
+      <input matInput name="cep" [(ngModel)]="usuario.endereco.cep" placeholder="00000-000" required #cep="ngModel">
+      <mat-hint *ngIf="!cep.valid && cep.touched" style="color: red;">CEP é obrigatório</mat-hint>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" fxLayoutGap fxFlex="25">
+      <mat-label>Número</mat-label>
+      <input matInput name="numero" [(ngModel)]="usuario.endereco.numero" required #numero="ngModel">
+      <mat-hint *ngIf="!numero.valid && numero.touched" style="color: red;">Número é obrigatório</mat-hint>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" fxLayoutGap fxFlex="45">
+      <mat-label>Complemento</mat-label>
+      <input matInput name="complemento" [(ngModel)]="usuario.endereco.complemento" required #complemento="ngModel">
+    </mat-form-field>
+  </div>
+
+  <mat-form-field appearance="outline" class="w-100">
+    <mat-label>Rua</mat-label>
+    <input matInput name="rua" [(ngModel)]="usuario.endereco.rua" required #rua="ngModel">
+    <mat-hint *ngIf="!rua.valid && rua.touched" style="color: red;">Rua é obrigatório</mat-hint>
   </mat-form-field>
 
-  <mat-form-field appearance="outline">
-    <mat-label>Email</mat-label>
-    <input matInput placeholder="email@email.com" name="email" 
-      [(ngModel)]="usuario.email" required email #email="ngModel">
-    <mat-hint *ngIf="!email.valid && email.touched" style="color: red;">Email inválido.</mat-hint>
-  </mat-form-field>
+  <div fxLayout="row" fxLayoutAlign="space-between start">
+    <mat-form-field appearance="outline" fxLayoutGap fxFlex="35">
+      <mat-label>Bairro</mat-label>
+      <input matInput name="bairro" [(ngModel)]="usuario.endereco.bairro" placeholder="00000-000" required #bairro="ngModel">
+      <mat-hint *ngIf="!bairro.valid && bairro.touched" style="color: red;">Bairro é obrigatório</mat-hint>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" fxLayoutGap fxFlex="30">
+      <mat-label>Cidade</mat-label>
+      <input matInput name="cidade" [(ngModel)]="usuario.endereco.cidade" required #cidade="ngModel">
+      <mat-hint *ngIf="!cidade.valid && cidade.touched" style="color: red;">Cidade é obrigatório</mat-hint>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" fxLayoutGap fxFlex="25">
+      <mat-label>Estado</mat-label>
+      <input matInput name="estado" [(ngModel)]="usuario.endereco.estado" required #estado="ngModel">
+      <mat-hint *ngIf="!estado.valid && estado.touched" style="color: red;">Estado é obrigatório</mat-hint>
+    </mat-form-field>
+  </div>
 
   <button mat-raised-button [disabled]="!form.valid" color="primary">Submit</button>
 
