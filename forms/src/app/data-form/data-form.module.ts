@@ -8,6 +8,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { SharedModule } from '../shared/shared.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { SharedModule } from '../shared/shared.module';
     MatInputModule,
     MatButtonModule,
     FlexLayoutModule,
-    SharedModule
+    SharedModule,
+    HttpClientModule
   ]
 })
 export class DataFormModule { }
