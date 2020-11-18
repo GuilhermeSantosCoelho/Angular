@@ -9,8 +9,8 @@ import { Component, OnInit } from '@angular/core';
 export class TemplateFormComponent implements OnInit {
 
   usuario: any = {
-    nome: 'Guilherme',
-    email: 'guilherme@gmail.com',
+    nome: null,
+    email: null,
     endereco: {
       cep: '',
       numero: null,
@@ -27,23 +27,43 @@ export class TemplateFormComponent implements OnInit {
 
   }
 
-  consultaCep(cep) {
+  consultaCep(cep, form) {
     cep = cep.replace(/\D/g, '');
     if (cep != "") {
       var validacep = /^[0-9]{8}$/;
       if (validacep.test(cep)) {
+        this.resetaDadosForm(form);
+
         this.http.get(`https://viacep.com.br/ws/${cep}/json`)
           .subscribe(dados => {
-            console.log(dados);
+            this.populaDadosForm(dados, form);
           });
       }
     }
   }
 
-  aplicaCssErro(campo) {
-    return {
-
-    }
+  populaDadosForm(dados, form){
+    form.form.patchValue({
+      endereco: {
+        cep: dados.cep,
+        complemento: dados.complemento,
+        rua: dados.logradouro,
+        bairro: dados.bairro,
+        cidade: dados.localidade,
+        estado: dados.uf
+      }
+    })
   }
 
+  resetaDadosForm(form){
+    form.form.patchValue({
+      endereco: {
+        complemento: null,
+        rua: null,
+        bairro: null,
+        cidade: null,
+        estado: null
+      }
+    })
+  }
 }

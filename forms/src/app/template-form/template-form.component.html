@@ -19,7 +19,7 @@
     <div fxLayout="row" fxLayoutAlign="space-between start">
       <mat-form-field appearance="outline" fxLayoutGap fxFlex="25">
         <mat-label>CEP</mat-label>
-        <input matInput name="cep" [(ngModel)]="usuario.endereco.cep" placeholder="00000-000" required #cep="ngModel" (blur)="consultaCep(cep.value)">
+        <input matInput name="cep" [(ngModel)]="usuario.endereco.cep" placeholder="00000-000" required #cep="ngModel" (blur)="consultaCep(cep.value, form)">
         <mat-error *ngIf="!cep.valid && cep.touched">CEP é obrigatório</mat-error>
       </mat-form-field>
 
