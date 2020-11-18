@@ -6,15 +6,14 @@ import { TemplateFormComponent } from './template-form.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
-import { FormDebugComponent } from '../form-debug/form-debug.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [
-    TemplateFormComponent,
-    FormDebugComponent
+    TemplateFormComponent
   ],
   imports: [
     CommonModule,
@@ -24,7 +23,8 @@ import { HttpClientModule } from '@angular/common/http';
     MatButtonModule,
     FlexLayoutModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    SharedModule
   ]
 })
 export class TemplateFormModule { }

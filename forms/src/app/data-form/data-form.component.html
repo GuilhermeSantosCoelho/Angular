@@ -1,1 +1,18 @@
-<p>data-form works!</p>
+<form class="form" [formGroup]="formulario">
+  <h3>Template form</h3>
+  <div fxLayout="column" fxLayoutAlign="center stretch">
+    <mat-form-field appearance="outline" fxFlex="100">
+      <mat-label>Nome</mat-label>
+      <input matInput formControlName="nome" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" fxFlex="100">
+      <mat-label>Email</mat-label>
+      <input matInput placeholder="email@email.com" formControlName="email" required email>
+    </mat-form-field>
+  </div>
+
+  <button mat-raised-button color="primary">Submit</button>
+
+  <app-form-debug [form]="formulario"></app-form-debug>
+</form>
