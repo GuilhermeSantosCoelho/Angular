@@ -12,7 +12,8 @@
     </mat-form-field>
   </div>
 
-  <button mat-raised-button color="primary">Submit</button>
+  <button mat-raised-button type="submit" color="primary">Submit</button>
+  <button mat-raised-button (click)="resetar()" color="primary">Cancelar</button>
 
   <app-form-debug [form]="formulario"></app-form-debug>
 </form>
