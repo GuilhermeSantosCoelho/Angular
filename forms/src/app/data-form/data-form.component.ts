@@ -25,20 +25,22 @@ export class DataFormComponent implements OnInit {
     this.formulario = this.formBuilder.group({
       nome: [null, Validators.required],
       email: [null, [Validators.required, Validators.email]],
-      cep: [null, Validators.required],
-      numero: [null, Validators.required],
-      complemento: [null],
-      rua: [null, Validators.required],
-      bairro: [null, Validators.required],
-      cidade: [null, Validators.required],
-      estado: [null, Validators.required]
+      endereco: this.formBuilder.group({
+        cep: [null, Validators.required],
+        numero: [null, Validators.required],
+        complemento: [null],
+        rua: [null, Validators.required],
+        bairro: [null, Validators.required],
+        cidade: [null, Validators.required],
+        estado: [null, Validators.required]
+      })
     })
   }
 
   getErrorMessage(campo) {
-    if (this.formulario.controls[campo].hasError('required')) {
+    if (this.formulario.get(campo).hasError('required')) {
       return 'Campo obrigatório';
-    }else if(this.formulario.controls[campo].hasError('email')){
+    }else if(this.formulario.get(campo).hasError('email')){
       return 'Email inválido';
     }
     return '';

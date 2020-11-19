@@ -14,18 +14,18 @@
     </mat-form-field>
   </div>
 
-  <div>
+  <div formGroupName="endereco">
     <div fxLayout="row" fxLayoutAlign="space-between start">
       <mat-form-field appearance="outline" fxLayoutGap fxFlex="25">
         <mat-label>CEP</mat-label>
         <input matInput placeholder="00000-000" formControlName="cep">
-        <mat-error> {{getErrorMessage('cep')}} </mat-error>
+        <mat-error> {{getErrorMessage('endereco.cep')}} </mat-error>
       </mat-form-field>
 
       <mat-form-field appearance="outline" fxLayoutGap fxFlex="25">
         <mat-label>Número</mat-label>
         <input matInput formControlName="numero">
-        <mat-error> {{getErrorMessage('numero')}} </mat-error>
+        <mat-error> {{getErrorMessage('endereco.numero')}} </mat-error>
       </mat-form-field>
 
       <mat-form-field appearance="outline" fxLayoutGap fxFlex="45">
@@ -37,26 +37,26 @@
     <mat-form-field appearance="outline" class="w-100">
       <mat-label>Rua</mat-label>
       <input matInput formControlName="rua">
-      <mat-error> {{getErrorMessage('rua')}} </mat-error>
+      <mat-error> {{getErrorMessage('endereco.rua')}} </mat-error>
     </mat-form-field>
 
     <div fxLayout="row" fxLayoutAlign="space-between start">
       <mat-form-field appearance="outline" fxLayoutGap fxFlex="35">
         <mat-label>Bairro</mat-label>
         <input matInput formControlName="bairro">
-        <mat-error> {{getErrorMessage('bairro')}} </mat-error>
+        <mat-error> {{getErrorMessage('endereco.bairro')}} </mat-error>
       </mat-form-field>
 
       <mat-form-field appearance="outline" fxLayoutGap fxFlex="30">
         <mat-label>Cidade</mat-label>
         <input matInput formControlName="cidade">
-        <mat-error> {{getErrorMessage('cidade')}} </mat-error>
+        <mat-error> {{getErrorMessage('endereco.cidade')}} </mat-error>
       </mat-form-field>
 
       <mat-form-field appearance="outline" fxLayoutGap fxFlex="25">
         <mat-label>Estado</mat-label>
         <input matInput formControlName="estado">
-        <mat-error> {{getErrorMessage('estado')}} </mat-error>
+        <mat-error> {{getErrorMessage('endereco.estado')}} </mat-error>
       </mat-form-field>
     </div>
   </div>
