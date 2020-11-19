@@ -1,21 +1,69 @@
 <form class="form" [formGroup]="formulario" (submit)="onSubmit()">
-  <h3>Template form</h3>
+  <h3>Data form</h3>
   <div fxLayout="column" fxLayoutAlign="center stretch">
     <mat-form-field appearance="outline" fxFlex="100">
       <mat-label>Nome</mat-label>
-      <input matInput formControlName="nome" required>
-      <mat-error>{{getErrorMessage('nome')}}</mat-error>
+      <input matInput formControlName="nome">
+      <mat-error> {{getErrorMessage('nome')}} </mat-error>
     </mat-form-field>
 
     <mat-form-field appearance="outline" fxFlex="100">
       <mat-label>Email</mat-label>
-      <input matInput placeholder="email@email.com" formControlName="email" required email>
-      <mat-error>{{getErrorMessage('email')}}</mat-error>
+      <input matInput placeholder="email@email.com" formControlName="email">
+      <mat-error> {{getErrorMessage('email')}} </mat-error>
     </mat-form-field>
   </div>
 
-  <button mat-raised-button type="submit" color="primary">Submit</button>
-  <button mat-raised-button (click)="resetar()" color="primary">Cancelar</button>
+  <div>
+    <div fxLayout="row" fxLayoutAlign="space-between start">
+      <mat-form-field appearance="outline" fxLayoutGap fxFlex="25">
+        <mat-label>CEP</mat-label>
+        <input matInput placeholder="00000-000" formControlName="cep">
+        <mat-error> {{getErrorMessage('cep')}} </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" fxLayoutGap fxFlex="25">
+        <mat-label>Número</mat-label>
+        <input matInput formControlName="numero">
+        <mat-error> {{getErrorMessage('numero')}} </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" fxLayoutGap fxFlex="45">
+        <mat-label>Complemento</mat-label>
+        <input matInput formControlName="complemento">
+      </mat-form-field>
+    </div>
+
+    <mat-form-field appearance="outline" class="w-100">
+      <mat-label>Rua</mat-label>
+      <input matInput formControlName="rua">
+      <mat-error> {{getErrorMessage('rua')}} </mat-error>
+    </mat-form-field>
+
+    <div fxLayout="row" fxLayoutAlign="space-between start">
+      <mat-form-field appearance="outline" fxLayoutGap fxFlex="35">
+        <mat-label>Bairro</mat-label>
+        <input matInput formControlName="bairro">
+        <mat-error> {{getErrorMessage('bairro')}} </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" fxLayoutGap fxFlex="30">
+        <mat-label>Cidade</mat-label>
+        <input matInput formControlName="cidade">
+        <mat-error> {{getErrorMessage('cidade')}} </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" fxLayoutGap fxFlex="25">
+        <mat-label>Estado</mat-label>
+        <input matInput formControlName="estado">
+        <mat-error> {{getErrorMessage('estado')}} </mat-error>
+      </mat-form-field>
+    </div>
+  </div>
+  <div fxLayout="row" fxLayoutAlign="center center">
+    <button mat-raised-button type="submit" color="primary" fxFlex="20">Submit</button>
+    <button mat-raised-button (click)="resetar()" color="warn" fxFlexOffset="5" fxFlex="20">Cancelar</button>
+  </div>
 
   <app-form-debug [form]="formulario"></app-form-debug>
 </form>
