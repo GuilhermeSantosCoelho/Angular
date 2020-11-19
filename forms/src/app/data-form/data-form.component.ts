@@ -37,6 +37,39 @@ export class DataFormComponent implements OnInit {
     })
   }
 
+  consultaCep() {
+    let cep = this.formulario.get('endereco.cep').value;
+    cep = cep.replace(/\D/g, '');
+    if (cep != "") {
+      var validacep = /^[0-9]{8}$/;
+      if (validacep.test(cep)) {
+        this.resetaDadosForm();
+
+        this.http.get(`https://viacep.com.br/ws/${cep}/json`)
+          .subscribe(dados => {
+            this.populaDadosForm(dados);
+          });
+      }
+    }
+  }
+
+  populaDadosForm(dados){
+    this.formulario.patchValue({
+      endereco: {
+        cep: dados.cep,
+        complemento: dados.complemento,
+        rua: dados.logradouro,
+        bairro: dados.bairro,
+        cidade: dados.localidade,
+        estado: dados.uf
+      }
+    })
+  }
+
+  resetaDadosForm(){
+    this.formulario.reset();
+  }
+
   getErrorMessage(campo) {
     if (this.formulario.get(campo).hasError('required')) {
       return 'Campo obrigatório';

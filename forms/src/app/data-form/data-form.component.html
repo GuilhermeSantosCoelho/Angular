@@ -18,7 +18,7 @@
     <div fxLayout="row" fxLayoutAlign="space-between start">
       <mat-form-field appearance="outline" fxLayoutGap fxFlex="25">
         <mat-label>CEP</mat-label>
-        <input matInput placeholder="00000-000" formControlName="cep">
+        <input matInput placeholder="00000-000" formControlName="cep" (blur)="consultaCep()">
         <mat-error> {{getErrorMessage('endereco.cep')}} </mat-error>
       </mat-form-field>
 
