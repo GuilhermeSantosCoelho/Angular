@@ -4,11 +4,13 @@
     <mat-form-field appearance="outline" fxFlex="100">
       <mat-label>Nome</mat-label>
       <input matInput formControlName="nome" required>
+      <mat-error>{{getErrorMessage('nome')}}</mat-error>
     </mat-form-field>
 
     <mat-form-field appearance="outline" fxFlex="100">
       <mat-label>Email</mat-label>
       <input matInput placeholder="email@email.com" formControlName="email" required email>
+      <mat-error>{{getErrorMessage('email')}}</mat-error>
     </mat-form-field>
   </div>
 

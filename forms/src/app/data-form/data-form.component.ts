@@ -28,8 +28,17 @@ export class DataFormComponent implements OnInit {
     })
   }
 
+  getErrorMessage(campo) {
+    if (this.formulario.controls[campo].hasError('required')) {
+      return 'Campo obrigatório';
+    }else if(this.formulario.controls[campo].hasError('email')){
+      return 'Email inválido';
+    }
+    return '';
+  }
+
   resetar(){
-    this.formulario.reset();
+    this.formulario.reset(); 
   }
 
   onSubmit(){
