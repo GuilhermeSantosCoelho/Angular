@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Observable } from 'rxjs';
 import { EstadoBr } from '../shared/models/estado-br';
 import { ConsultaCepService } from '../shared/services/consulta-cep.service';
 import { DropdownService } from '../shared/services/dropdown.service';
@@ -13,7 +14,7 @@ import { DropdownService } from '../shared/services/dropdown.service';
 export class DataFormComponent implements OnInit {
 
   formulario: FormGroup;
-  estados: EstadoBr[];
+  estados: Observable<EstadoBr>;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -27,12 +28,7 @@ export class DataFormComponent implements OnInit {
     //   nome: new FormControl(null),
     //   email: new FormControl(null),
     // });
-    this.estados = [];
-
-    this.dropdownService.getEstadosBr()
-      .subscribe((dados: EstadoBr) => { this.estados.push(dados) });
-
-      console.log(this.estados);
+    this.estados = this.dropdownService.getEstadosBr();
 
     this.formulario = this.formBuilder.group({
       nome: [null, Validators.required],

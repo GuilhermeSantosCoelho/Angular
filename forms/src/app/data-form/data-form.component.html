@@ -55,7 +55,9 @@
 
       <mat-form-field appearance="outline" fxLayoutGap fxFlex="25">
         <mat-label>Estado</mat-label>
-        <input matInput formControlName="estado">
+        <mat-select formControlName="estado">
+          <mat-option *ngFor="let state of estados | async" [value]="state.sigla">{{ state.nome }}</mat-option>
+        </mat-select>
         <mat-error> {{getErrorMessage('endereco.estado')}} </mat-error>
       </mat-form-field>
     </div>
