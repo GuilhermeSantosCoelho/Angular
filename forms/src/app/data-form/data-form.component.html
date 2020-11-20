@@ -78,6 +78,14 @@
       </mat-select>
       <mat-error> {{getErrorMessage('tecnologias')}} </mat-error>
     </mat-form-field>
+
+    <div fxLayoutGap fxFlex="35" fxFlexOffset="5">
+      <label>Newsletter: </label>
+      <mat-radio-group formControlName="newsletter">
+        <mat-radio-button *ngFor="let op of newsletterOp" fxFlexOffset="1" [value]="op.valor">{{ op.desc }}</mat-radio-button>
+      </mat-radio-group>
+      <mat-error> {{getErrorMessage('newsletter')}} </mat-error>
+    </div>
   </div>
 
   <div fxLayout="row" fxLayoutAlign="center center">
