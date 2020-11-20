@@ -62,9 +62,20 @@
       </mat-form-field>
     </div>
   </div>
+  <div fxLayout="row" fxLayoutAlign="space-between start">
+    <mat-form-field appearance="outline" fxLayoutGap fxFlex="25">
+      <mat-label>Cargo</mat-label>
+      <mat-select formControlName="cargo" [compareWith]="compararCargos">
+        <mat-option *ngFor="let cargo of cargos" [value]="cargo">{{ cargo.desc }}</mat-option>
+      </mat-select>
+      <mat-error> {{getErrorMessage('cargo')}} </mat-error>
+    </mat-form-field>
+  </div>
+
   <div fxLayout="row" fxLayoutAlign="center center">
     <button mat-raised-button type="submit" color="primary" fxFlex="20">Submit</button>
     <button mat-raised-button (click)="resetar()" color="warn" fxFlexOffset="5" fxFlex="20">Cancelar</button>
+    <button mat-raised-button (click)="setarCargo()" color="warn" fxFlexOffset="5" fxFlex="20">Setar cargo</button>
   </div>
 
   <app-form-debug [form]="formulario"></app-form-debug>
