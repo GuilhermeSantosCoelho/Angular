@@ -62,7 +62,7 @@
       </mat-form-field>
     </div>
   </div>
-  <div fxLayout="row" fxLayoutAlign="space-between start">
+  <div fxLayout="row" fxLayoutAlign="start start">
     <mat-form-field appearance="outline" fxLayoutGap fxFlex="25">
       <mat-label>Cargo</mat-label>
       <mat-select formControlName="cargo" [compareWith]="compararCargos">
@@ -70,12 +70,24 @@
       </mat-select>
       <mat-error> {{getErrorMessage('cargo')}} </mat-error>
     </mat-form-field>
+
+    <mat-form-field appearance="outline" fxLayoutGap fxFlex="25" fxFlexOffset="5">
+      <mat-label>Tecnologias</mat-label>
+      <mat-select formControlName="tecnologias" multiple>
+        <mat-option *ngFor="let tecnologia of tecnologias" [value]="tecnologia.nome">{{ tecnologia.desc }}</mat-option>
+      </mat-select>
+      <mat-error> {{getErrorMessage('tecnologias')}} </mat-error>
+    </mat-form-field>
   </div>
 
   <div fxLayout="row" fxLayoutAlign="center center">
     <button mat-raised-button type="submit" color="primary" fxFlex="20">Submit</button>
-    <button mat-raised-button (click)="resetar()" color="warn" fxFlexOffset="5" fxFlex="20">Cancelar</button>
-    <button mat-raised-button (click)="setarCargo()" color="warn" fxFlexOffset="5" fxFlex="20">Setar cargo</button>
+    <button mat-raised-button (click)="setarCargo()" type="button" color="warn" fxFlexOffset="5" fxFlex="20">Setar
+      cargo</button>
+    <button mat-raised-button (click)="setarTecnologias()" type="button" color="warn" fxFlexOffset="5" fxFlex="20">Setar
+      tecnologias</button>
+    <button mat-raised-button (click)="resetar()" type="button" color="warn" fxFlexOffset="5"
+      fxFlex="20">Resetar</button>
   </div>
 
   <app-form-debug [form]="formulario"></app-form-debug>
