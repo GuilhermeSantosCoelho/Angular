@@ -1,6 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { EstadoBr } from '../shared/models/estado-br';
+import { ConsultaCepService } from '../shared/services/consulta-cep.service';
+import { DropdownService } from '../shared/services/dropdown.service';
 
 @Component({
   selector: 'app-data-form',
@@ -10,17 +13,26 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class DataFormComponent implements OnInit {
 
   formulario: FormGroup;
+  estados: EstadoBr[];
 
   constructor(
     private formBuilder: FormBuilder,
-    private http: HttpClient
-    ) { }
+    private http: HttpClient,
+    private dropdownService: DropdownService,
+    private cepService: ConsultaCepService
+  ) { }
 
   ngOnInit(): void {
     // this.formulario = new FormGroup({
     //   nome: new FormControl(null),
     //   email: new FormControl(null),
     // });
+    this.estados = [];
+
+    this.dropdownService.getEstadosBr()
+      .subscribe((dados: EstadoBr) => { this.estados.push(dados) });
+
+      console.log(this.estados);
 
     this.formulario = this.formBuilder.group({
       nome: [null, Validators.required],
@@ -39,21 +51,13 @@ export class DataFormComponent implements OnInit {
 
   consultaCep() {
     let cep = this.formulario.get('endereco.cep').value;
-    cep = cep.replace(/\D/g, '');
-    if (cep != "") {
-      var validacep = /^[0-9]{8}$/;
-      if (validacep.test(cep)) {
-        this.resetaDadosForm();
-
-        this.http.get(`https://viacep.com.br/ws/${cep}/json`)
-          .subscribe(dados => {
-            this.populaDadosForm(dados);
-          });
-      }
+    if(cep != null && cep !== ''){
+      this.cepService.consultaCep(cep)
+        .subscribe(dados => this.populaDadosForm(dados));
     }
   }
 
-  populaDadosForm(dados){
+  populaDadosForm(dados) {
     this.formulario.patchValue({
       endereco: {
         cep: dados.cep,
@@ -66,30 +70,38 @@ export class DataFormComponent implements OnInit {
     })
   }
 
-  resetaDadosForm(){
+  resetaDadosForm() {
     this.formulario.reset();
   }
 
   getErrorMessage(campo) {
     if (this.formulario.get(campo).hasError('required')) {
       return 'Campo obrigatório';
-    }else if(this.formulario.get(campo).hasError('email')){
+    } else if (this.formulario.get(campo).hasError('email')) {
       return 'Email inválido';
     }
     return '';
   }
 
-  resetar(){
-    this.formulario.reset(); 
+  resetar() {
+    this.formulario.reset();
   }
 
-  onSubmit(){
-    this.http.post('https://httpbin.org/post', JSON.stringify(this.formulario.value))
-      .subscribe(res => {
-        console.log(res);
-        this.resetar();
-      },
-      (error: any) => alert('Ocorreu um erro.'));
+  onSubmit() {
+    if (this.formulario.valid) {
+      this.http.post('https://httpbin.org/post', JSON.stringify(this.formulario.value))
+        .subscribe(res => {
+          console.log(res);
+          this.resetar();
+        },
+          (error: any) => alert('Ocorreu um erro.'));
+    }else{
+      Object.keys(this.formulario.controls).forEach((campo) => {
+        const controle = this.formulario.get(campo);
+        controle.markAsTouched();
+        controle.markAsDirty();
+      });
+    }
   }
 
 }
